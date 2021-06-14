@@ -12,7 +12,7 @@ describe('Saving Records',function(){
     it('Saves a record to database',function(done){
         var char= new MarioChar({
             name:'mario',
-            waight:16
+            weight:16
     });
 
         char.save().then(function(){

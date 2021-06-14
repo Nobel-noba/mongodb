@@ -30,7 +30,14 @@ describe('Updating Record',function(){
                 });
             });
         });
-    
+    it('Increament the weight by 1',function(done){
+        MarioChar.update({},{$inc:{weight:+1}}).then(function(){
+            MarioChar.findOne({name:'mario'}).then(function(record){
+                assert(record.weight===1);
+                done();
+            });
+        });
+    });
     //next test
 
 });

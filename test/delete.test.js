@@ -13,7 +13,7 @@ describe('Deleting Record',function(){
     beforeEach(function(done){
         char= new MarioChar({
             name:'mario',
-            waight:16
+            weight:16
         });
 
         char.save().then(function(){

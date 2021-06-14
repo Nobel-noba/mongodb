@@ -5,7 +5,7 @@ const Schema= mongoose.Schema;
 
 const MCS=new Schema({
     name :String,
-    waight :Number
+    weight :Number
 });
 
 
