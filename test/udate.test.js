@@ -6,7 +6,7 @@ const MarioChar= require('../models/mariocar');
 
 
 // Describe test
-describe('Deleting Record',function(){
+describe('Updating Record',function(){
 
     var char;
 
@@ -22,17 +22,14 @@ describe('Deleting Record',function(){
     });
 
     // create tests
-    it('delete a record from the database',function(done){
-        MarioChar.findOneAndRemove({
-            name:'mario'
-        }).then(function(){
-            MarioChar.findOne({name:'mario'}).then(function(result){
-                assert(result===null);
-                done();
+    it('Updates a record in the database',function(done){
+            MarioChar.findOneAndUpdate({name:'mario'},{name:'Luiji'}).then(function(){
+                MarioChar.findOne({_id:char._id}).then(function(result){
+                    assert(result.name==='Luiji');
+                    done();
+                });
             });
         });
-
-    });
     
     //next test
 
